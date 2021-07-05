@@ -1,0 +1,214 @@
+	/* Default Tag Styles ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	* { box-sizing: border-box; }
+	html { font-size: 62.5%; margin: 0; }
+	body { margin: 0; text-align: left; background: #010101 url('/img/bg.jpg') repeat fixed center top; color: black; font: normal normal normal 14px/normal Arial, Helvetica, Verdana, sans-serif; font-size: 1.4em; } /* The last font-size was originally font-size: 1.4rem; but Chrome was making the font-size larger on a page reload because of a compound bug. The fix was to use 1.4em instead of 1.4rem. Added: 12/12/2014. Sources: http://www.wp-code.com/wordpress-snippets/how-to-stop-chrome-using-a-large-font-size-after-refreshing/ http://stackoverflow.com/questions/20099844/chrome-not-respecting-rem-font-size-on-body-tag */
+	h1 { display: block; margin: 20px auto; border-radius: 7px; text-align: center; font-size: 24px; font-size: 2.4rem; background: transparent url("/img/header-bg.png") repeat-x scroll center center; border: 1px solid gray; color: #e3e3e3; }
+	a:link, a:visited, div.noButton form.logout input[value="Logout"]:link, div.noButton form.logout input[value="Logout"]:visited { color: blue; text-decoration: none; }
+	a:hover, div.noButton form.logout input[value="Logout"]:hover { text-decoration: underline; }
+	a:active, div.noButton form.logout input[value="Logout"]:active { color: darkorange; }
+	a img { border: 0; }
+	textarea { resize: none; }
+	input, textarea { border: 1px solid gray; }
+	input:focus, textarea:focus { border: 1px solid dodgerblue; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+	table tr th { background: transparent url("/img/header-bg.png") repeat-x scroll center center; color: #e3e3e3; }
+	img[src="/admin/img/my-movies-title.png"] { display: block; margin: 60px auto 0 auto; width: 250px; height: auto; }
+
+	/* Accordion Image Menu ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	div#aim.aim a span { position: absolute !important; z-index: 1 !important; top: 40px !important; left: 150px !important; text-transform: uppercase; line-height: 12px; }
+	div#aim.aim a img { display: initial !important; } /* Without this, the image will be centered on the canvas instead of aligned left. Alternatively, with Firebug, you can click an image with the inspector arrow and in the <img> tag, turn off element.style { display: none; } by clicking to the left of the style. */
+
+	/* General Styles ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	.error { color: red !important; text-align: center; } /* The only reason "!important" is used in the color is so that when the "error" class is used together with the "text-stroke" class, black doesn't override red for the font color. */
+	.invisible { display: none; }
+	.text-stroke { font-weight: bold; color: black; text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5), 1px -1px 0 rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.5); } /* Added: 12/15/2014. Source: http://css-tricks.com/adding-stroke-to-web-text/ */
+	.text-shadow { font-weight: bold; color: black; text-shadow: 0 0 3px rgba(255, 255, 255, 1.0); } /* Added: 01/24/2015. Source: Facebook's profile header. */
+	.readableBG { background-color: rgba(34, 124, 159, 0.75); color: black; font-weight: bold; }
+	div.noButton { display: inline; }
+	div.noButton form { display: inline; text-align: left; }
+	div.noButton form input[value="Logout"] { display: inline; margin: 0; padding: 0; border: 0; box-shadow: none; background: transparent; font: inherit; color: blue; text-transform: uppercase; }
+	div.noButton form input[value="Logout"]:hover { cursor: pointer; }
+
+	/* Global Footer ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	footer { margin: 30px 0 20px 0; padding: 0 70px; text-align: center; font-size: 16px; font-size: 1.6rem; } /* The reason the padding is so high is to make the footer wrap after the period when viewed on a mobile browser. */
+
+	/* Global Header ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	header { height: 60px; text-align: center; text-transform: uppercase; }
+	header > div { z-index: 9; position: fixed; width: 100%; background-color: rgba(0, 0, 0, 0.65); } /* The z-index is increased so the header doesn't get covered by the Accordion Image Menu on the home page. */
+	header > div > div { overflow: hidden; width: 1000px; margin: 0 auto; }
+	header > div > div a { background-color: transparent; float: left; display: block; height: 60px; line-height: 60px; border-right: 1px solid gray; text-align: center; } /* The height and line-height must be the same so the text centers vertically. */
+	header > div > div a div.noButton form input[value="Logout"] { float: none; display: inline; } /* Override some of the above properties. Without this, the "Logout" link doesn't center. */
+	header > div > div a { width: 380px; } /* Logo. */
+	header > div > div a + a { width: 80px; } /* Home. */
+	header > div > div a + a + a { width: 100px; } /* View All. */
+	header > div > div a + a + a + a { width: 120px; } /* Admin Home. */
+	header > div > div a + a + a + a + a { width: 110px; } /* Add Movie. */
+	header > div > div a + a + a + a + a + a { width: 130px; } /* Edit / Delete. */
+	header > div > div a + a + a + a + a + a + a { width: 80px; } /* Login / Logout. */
+	header > div > div a:link, header > div > div a:visited, header > div > div a div.noButton form input[value="Logout"] { color: white; text-decoration: none; }
+	header > div > div a:hover { background-color: #4a5f74; text-decoration: none; }
+	header > div > div a:first-child, header > div > div a div.noButton form input[value="Logout"] { padding: 0; border: 0; }
+	header > div > div a:last-child { border: 0; }
+	header > div > div a:first-child:hover, header > div > div a div.noButton form.logout input[value="Logout"]:hover { background-color: transparent; text-decoration: none; }
+	header > div > div a:active { color: darkorange; }
+	header > div > div a img { height: 60px; }
+
+	/* Home Page ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	div.homePageContainer h1 { width: 325px; }
+
+	/* jQuery UI ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	.ui-widget-overlay { opacity: 0.9; background: url("/jquery/ui/images/ui-bg_diagonals-thick_20_666666_40x40.png") repeat scroll 50% 50% #5c5c5c; }
+	input.ui-button, .ui-button-text { font-size: 11px; font-size: 1.1rem; font-weight: bold; color: white; }
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { background: #555555 url(/jquery/ui/images/ui-bg_glass_20_555555_1x400.png) 50% 50% repeat-x; border: 1px solid #666666; color: white; font-weight: bold; box-shadow: 0 0 3px gray inset, 0 1px 1px rgba(0, 0, 0, 0.5); }
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #0078a3 url(/jquery/ui/images/ui-bg_glass_40_0078a3_1x400.png) 50% 50% repeat-x; border: 1px solid #59b4d4; color: #ffffff; font-weight: bold; box-shadow: 0 0 3px gray inset, 0 1px 1px rgba(0, 0, 0, 0.5); }
+
+	/* Movie ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	div.movieContainer { overflow: hidden; width: 600px; margin: 0 auto; text-align: center; } /* text-align: center; is used to center the Edit button. */
+	div.movieContainer h1 { margin-bottom: 5px; }
+	div.movieContainer form { margin-bottom: 20px; }
+	div.movieContainer div { float: left; width: 50%; }
+	div.movieContainer div img { width: 250px; height: auto; display: block; margin: 0 auto; }
+	div.movieContainer div p { margin: 5px 0 20px 0; padding: 4px 6px; border: 1px solid black; background-color: rgba(34, 124, 159, 0.6); text-align: center; } /* Image caption. */
+	div.movieContainer div p + p { text-align: justify; } /* Synopsis. */
+	div.movieContainer div table { width: 94%; margin: 0 auto; border-collapse: collapse; border-spacing: 0; text-align: center; }
+	div.movieContainer div table tr th { height: 20px; border: 1px solid black; }
+	div.movieContainer div table tr td { height: 20px; border: 1px solid black; background-color: rgba(34, 124, 159, 0.6); }
+	div.movieContainer div table tr th { background-color: dimgray; color: white; }
+
+	/* View All /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	div.viewAllContainer { width: 800px; margin: 0 auto; }
+	div.viewAllContainer h1 { width: 200px; }
+	div.viewAllContainer table { width: 100%; background-color: black; border-radius: 7px; border-spacing: 2px; text-align: center; } /* border-spacing determines the width of the "border," background-color determines the color of the "border." Notice how the actual border property isn't used, that's why I put the border in quotation marks. Added: 10/29/2014. Source: http://stackoverflow.com/questions/628301/css3s-border-radius-property-and-border-collapsecollapse-dont-mix-how-can-i */
+	div.viewAllContainer table tr:nth-child(odd) td { background-color: lightgray; }
+	div.viewAllContainer table tr:nth-child(even) td { background-color: white; }
+	div.viewAllContainer table tr:first-child { background-color: transparent; } /* Doesn't need a background-color since it uses an image. */
+	div.viewAllContainer table tr th:first-child { width: 5%; border-radius: 7px 0 0 0; }
+	div.viewAllContainer table tr th:first-child + th { width: 25%; }
+	div.viewAllContainer table tr th:first-child + th + th { width: 20%; }
+	div.viewAllContainer table tr th:first-child + th + th + th { width: 40%; }
+	div.viewAllContainer table tr th:first-child + th + th + th + th { width: 10%; border-radius: 0 7px 0 0; }
+	div.viewAllContainer table tr:last-child td:first-child { border-radius: 0 0 0 7px; }
+	div.viewAllContainer table tr:last-child td:last-child { border-radius: 0 0 7px 0; }
+	div.viewAllContainer div.pageNumbers { text-align: center; }
+	div.viewAllContainer div.pageNumbers p { display: inline-block; margin: 20px auto; padding: 0 20px; border-radius: 7px; text-align: center; font-size: 24px; font-size: 2.4rem; background: transparent url("/img/header-bg.png") repeat-x scroll center center; border: 1px solid gray; color: #e3e3e3; }
+	div.viewAllContainer div.pageNumbers p a { color: #e3e3e3; }
+
+/* Responsive Styles /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+	/* Tablet and desktop. */
+	@media only screen and ( min-width: 1000px ) { /* Minimum width of 1000px because that's the width of the nav on desktop. */
+		div#mobileNav, div.sliderContainer { display: none; }
+		div#desktopNav, div#aim { display: block; }
+	}
+
+	/* Mobile. */
+	@media only screen and ( max-width: 999.99px ) {
+		div#mobileNav, div.sliderContainer { display: block; }
+		div#desktopNav, div#aim { display: none; }
+
+		/* Default Tag Styles ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		body { margin: 0; padding: 0; font-size: 1.8rem; background-image: url('/img/bgm.jpg'); } /* If you don't set the right/left margin and padding to 0, you'll be able to scroll the page right/left if the width of the page isn't enough to hold the content. */
+		h1 { font-size: 20px; font-size: 2.0rem; }
+		a { outline: none; } /* Don't show a dotted outline when a link is clicked or touched. */
+		a:hover, a:active { background-color: transparent !important; } /* This is so a gray background doesn't appear behind a link when you touch it in Firefox mobile or when you hover the mouse over it in a PC while viewing the page in mobile mode. */
+
+		/* Add / Edit Form ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.addEditContainer { width: 90%; margin: 0 auto; }
+		div.addEditContainer > div.readableBG { width: 100%; }
+		div.addEditContainer > div form { width: 300px; } /* If you don't set a width here, the form won't center. */
+		div.addEditContainer > div.readableBG form label[for="rating_data"] { float: none; }
+		div.addEditContainer > div.readableBG form > div textarea { width: 250px; height: 120px; }
+		div#rating, div#rating div { float: none; width: 260px; margin: 0 auto; } /* Don't try putting specificity before the second target or it won't work! */
+		div#rating { margin-left: 10px; }
+		label[for="hours"]:after, label[for="upload-image"]:after, input#rating_data:after, span.widthXheight:after { content: "\a"; white-space: pre; } /* Add a break after these elements. Added: 01/05/2015. Source: http://stackoverflow.com/questions/10933837/line-break-like-br-using-only-css (Alshten's answer.) */
+
+		/* Edit / Delete / Enable / Disable Form ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.editDeleteEnableDisableContainer { width: 100%; }
+		div.editDeleteEnableDisableContainer form table { width: 90%; }
+		div.editDeleteEnableDisableContainer form table tr td { width: 100%; text-align: center; }
+		div.editDeleteEnableDisableContainer form table tr + tr td { width: 33.33%; }
+		div.editDeleteEnableDisableContainer form table tr + tr td + td { width: 33.33%; }
+		div.editDeleteEnableDisableContainer form table tr + tr td + td + td { width: 33.33%; }
+
+		/* Global Header ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		header { height: initial; }
+		header > div { position: static; }
+		header > div > div { width: 100%; margin: 0; }
+		header > div > div a { width: 15%; float: left; display: block; height: initial; margin: 0; line-height: 0; }
+		header > div > div a + a { width: 85%; } /* This and the width above must equal 100%. */
+		header > div > div a img { width: 74%; height: auto; }
+		header > div > div a + a img { width: 88%; }
+
+		/* Home Page ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.homePageContainer h1 { width: 74%; }
+
+		/* jQuery UI ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div#ui-id-1.deleteMovieDialog.invisible.ui-dialog-content.ui-widget-content { height: 150px !important; } /* For the Modal Dialog. Without this, the text box is too small and must be scrolled to be read completely. */
+		div#ui-id-1.deleteImageDialog.invisible.ui-dialog-content.ui-widget-content { height: 75px !important; } /* For the Modal Dialog. Without this, the text box is too small and must be scrolled to be read completely. */
+
+		/* Login ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.loginContainer { width: 90%; }
+		div.loginContainer form { width: 320px; }
+		div.loginContainer form div { width: 90%; }
+		div.loginContainer form div input { margin-top: 2px; }
+
+		/* Movie ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.movieContainer { width: 90%; margin: 0 auto; }
+		div.movieContainer div { float: none; width: 100%; }
+		div.movieContainer div img { width: 100%; display: block; margin: 0 auto; }
+		div.movieContainer div table { width: 100%; }
+
+		/* Nav Panel ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		nav#menu.panel { background: #2C3E50; z-index: 9999; position: fixed;
+			right: -15.625em; /* The width of your navigation panel. Change the property to right if the menu comes out from the right or vice versa. */
+			width: 15.625em; /* Should match the above value. */
+			overflow-y: scroll; /* CSS3. So the menu can be scrolled down if the screen is not big enough to display all of it (e.g., on a smartphone in landscape mode. */
+			scrollbar-width: none;  /* Hide the scrollbar in Firefox. Source: https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width Added: 01/07/2021. */
+		}
+
+		nav#menu.panel::-webkit-scrollbar {
+			height: 0;
+			width: 0; /* Hide the scrollbar in WebKit-based browsers. Sources: https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll#30680994 https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar Added: 01/07/2021. */
+		}
+
+		nav#menu.panel ul { padding: 0; border-top: 2px solid #34495D; }
+		nav#menu.panel ul li { list-style-type: none; text-align: left; }
+		nav#menu.panel ul li a { display: block; border-bottom: 2px solid #34495d; padding: 1em; }
+		nav#menu.panel ul li a:link, nav#menu.panel ul li a:visited { color: white; text-decoration: none; }
+		nav#menu.panel ul li a:hover, nav#menu.panel ul li a:active { background: indigo !important; }
+		nav#menu.panel ul li a.closeMenu:hover, nav#menu.panel ul li a.closeMenu:active { background-color: transparent !important; }
+		nav#menu.panel ul li a div.noButton form input[value="Logout"] { color: white; }
+		nav#menu.panel ul li a div.noButton form input[value="Logout"]:hover { text-decoration: none; }
+		nav#menu.panel ul li:last-child a:hover, nav#menu.panel ul li:last-child a:active { color: transparent; } /* Without this, there'll be an underline under the "Logout" link. Remember, this is targeting the logout link, which is an input button, not an anchor link. That's why it's not affected by having transparent color. */
+		nav#menu.panel ul li:last-child a[href="/admin/"]:hover, nav#menu.panel ul li:last-child a[href="/admin/"]:active { color: white; } /* This is so the "Login" link is visible after the above style. Notice how it uses an attribute selector to differentiate it from the "Logout" link. */
+
+		/* Slider ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		.sliderContainer { width: 90%; margin: 0 auto; }
+		div.nivo-caption { opacity: 1.0; background-color: black; background-color: rgba(0, 0, 0, 0.7); }
+
+		/* View All /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+		div.viewAllContainer { width: 90%; margin: 0 auto; }
+		div.viewAllContainer table tr th:first-child + th + th + th, div.viewAllContainer table tr td:first-child + td + td + td { display: none; }
+		div.viewAllContainer table tr th:first-child + th + th + th + th, div.viewAllContainer table tr td:first-child + td + td + td + td { display: none; }
+		div.viewAllContainer table tr th:first-child + th + th { border-radius: 0 7px 0 0; } /* Since you hide some columns in the mobile version, you have to apply the border-radius to the third column instead of the last one. */
+		div.viewAllContainer table tr:last-child td:first-child + td + td { border-radius: 0 0 7px 0; }
+	}

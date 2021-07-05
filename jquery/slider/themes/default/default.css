@@ -1,0 +1,142 @@
+/*
+Skin Name: Nivo Slider Default Theme
+Skin URI: http://nivo.dev7studios.com
+Skin Type: flexible
+Description: The default skin for the Nivo Slider.
+Version: 1.2
+Author: Gilbert Pellegrom
+Author URI: http://dev7studios.com
+*/
+
+.theme-default .slider_styles {
+	position:relative;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+	margin-bottom: 10px;
+/*
+	-webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+	-moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+	box-shadow: 0px 1px 5px 0px #4a4a4a;
+*/
+}
+.theme-default .slider_styles img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-default .slider_styles a {
+	border:0;
+	display:block;
+}
+.theme-default .nivo-controlNav {
+	text-align: center;
+	padding: 0 0 0 0; /* Top, right, bottom, left. */
+
+
+position: absolute;
+z-index: 9999;
+top: 600px;
+width: 60px;
+}
+.theme-default .nivo-controlNav a {
+	display:inline-block;
+	width:22px;
+	height:22px;
+	background:url(bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin: 0 0px;
+}
+.theme-default .nivo-controlNav a.active {
+	background-position:0 -22px;
+
+}
+.theme-default .nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+.theme-default a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+.theme-default a.nivo-prevNav {
+	left:15px;
+}
+
+.theme-default .nivo-caption {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.theme-default .nivo-caption a {
+	color:#fff;
+	border-bottom:1px dotted #fff;
+}
+.theme-default .nivo-caption a:hover {
+	color:#fff;
+}
+#slider .nivo-controlNav {
+
+}
+#slider .nivo-controlNav img {
+
+}
+.theme-default .nivo-controlNav.nivo-thumbs-enabled {
+	font: normal normal normal 0px/0 Arial, Helvetica, Verdana, sans-serif;
+}
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
+float: left;
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px; /* Space at the bottom of thumbnails. */
+}
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+	display: block;
+	width: 100px; /* Width of the thumbnail. Do not change this value, or the float will overflow. You'll have to increase the width of the <div class="slider-wrapper theme-default">. */
+	height: 46px;
+}
+
+/* Start highlight thumbs on hover.
+ * .nivo-thumbs-enabled img {
+ * 	opacity: 1;
+ * }
+ * .nivo-thumbs-enabled img:hover {
+ * 	opacity: 0.5;
+ * }
+ * End highlight thumbs on hover.
+*/
+
+.theme-default .nivo-controlNav a.active img {
+	border: 3px solid red;
+	margin: -3px; /* Applies a negative margin on all sides of the image, the exact size of the border. This pulls the border inside and causes no layout changes. More info: http://css-tricks.com/image-rollover-borders-that-do-not-change-layout/ */
+}
+
+/* Start arrow. */
+
+/* Modified code from the Talk Bubble on http://css-tricks.com/examples/ShapesOfCSS/.
+ * Original code for the Talk Bubble:
+ * #talkbubble { width: 120px; height: 80px; background: red; position: relative; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+ * #talkbubble:before { content:""; position: absolute; right: 100%; top: 26px; width: 0; height: 0; border-top: 13px solid transparent; border-right: 26px solid red; border-bottom: 13px solid transparent; }
+ */
+
+.theme-default .nivo-controlNav a.active {
+	position: relative;
+}
+
+.theme-default .nivo-controlNav a.active:before {
+	content: "";
+	position: absolute;
+	/* left: 100%; */
+	left: 103px;
+	top: 15px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	border-left: 15px solid red;
+	border-bottom: 8px solid transparent;
+	z-index: 1000;
+}
+/* End arrow. */

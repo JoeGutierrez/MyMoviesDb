@@ -1,0 +1,2 @@
+<?php // access.php handles this <form> submission. ?>
+<form action="" method="post" class="logout"><input type="hidden" name="action" value="logout"><input type="hidden" name="goto" value="/admin/"><input type="submit" value="Logout"></form>
